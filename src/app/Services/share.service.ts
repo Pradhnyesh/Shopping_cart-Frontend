@@ -14,14 +14,14 @@ export class ShareService {
   public products :Product[];
   public product:Product;
   public cart:cart[];
-  readonly APIUrl ="https://localhost:44339"
+  readonly APIUrl ="https://shoppingcartwebapi1.azurewebsites.net"
   constructor(private http:HttpClient) { }
 
 //Product Service
 GetAllProduct():Observable<Product[]>{
   return this.http.get<Product[]>(this.APIUrl+'/api/Prouduct/GetAllProduct()')
 }
-readonly apiurl="https://localhost:44339/api/Prouduct/SaveProduct"
+readonly apiurl="https://shoppingcartwebapi1.azurewebsites.net/api/Prouduct/SaveProduct"
 Addproduct(val:any){
   return this.http.post(this.apiurl,val);
 }
